@@ -1,9 +1,21 @@
+<div class="container">
+<div class="row">
+<br>
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
 <p id="notice"><%= notice %></p>
+<h2>Brand Info</h2>
 
 <p>
   <strong>Name:</strong>
   <%= @brand.name %>
 </p>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+<%= link_to fa_icon('pencil', text: "edit"), edit_admin_brand_path(@brand) %> |
+<%= link_to fa_icon('arrow-left ', text: "back"), admin_brands_path %>
+
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
+

@@ -1,6 +1,7 @@
 <h1>Editing Brand</h1>
+<%= link_to  fa_icon('eye', text: "view"), admin_brand_path(@brand) %> |
+<%= link_to fa_icon('arrow-left ', text: "back"), admin_brands_path %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @brand %> |
-<%= link_to 'Back', brands_path %>
+

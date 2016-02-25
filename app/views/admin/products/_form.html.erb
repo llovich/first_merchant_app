@@ -1,4 +1,8 @@
-<%= simple_form_for(@product) do |f| %>
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
+<%= simple_form_for([:admin, @product]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -11,6 +15,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:"btn btn-info" %>
   </div>
 <% end %>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>
+

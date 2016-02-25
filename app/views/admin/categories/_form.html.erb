@@ -1,4 +1,8 @@
-<%= simple_form_for(@category) do |f| %>
+<div class="container">
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 well">
+<%= simple_form_for([:admin, @category]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,3 +13,8 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+<br>
+</div>
+<div class="col-sm-2"></div>
+</div>
+</div>

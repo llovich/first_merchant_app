@@ -1,6 +1,9 @@
-<h1>Editing Category</h1>
+<h1>Edit Category</h1>
+
+<%= link_to fa_icon('eye', text: "view"), admin_category_path(@category) %> |
+<%= link_to fa_icon('arrow-left ', text: "back"), admin_categories_path %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+
+
