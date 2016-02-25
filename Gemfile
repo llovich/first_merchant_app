@@ -41,6 +41,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 #best pracice is to put faker in dev only, but bc play app, can add here
 gem 'faker'
 gem 'populator'
+gem "paperclip", "~> 4.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

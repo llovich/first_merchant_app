@@ -35,6 +35,10 @@
   <strong>Brand:</strong>
   <%= @product.brand.try(:name) %>
 </p>
+
+
+<%= image_tag @product.avatar.url(:medium) %>
+
 <br>
 
 <%= link_to fa_icon('pencil', text:"edit"), edit_admin_product_path(@product) %> |
