@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/shop' => 'storefront#index'
+  get '/about' => 'storefront#about'
+
   devise_for :users
 namespace :admin do
   resources :products
@@ -12,7 +15,7 @@ end
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'admin/products#index'
+  root 'storefront#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

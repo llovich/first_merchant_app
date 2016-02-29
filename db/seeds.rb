@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Category.create([{name: 'backpacks'}, {name: 'bandanas'}, {name: 'outerwear'}, {name: 'bows & clips'}, {name: 'hoodies'}, {name: 'costumes'}, {name: 'polos'}, {name: 'sweaters'}, {name: 'eyewear'}, {name: 'jerseys'}, {name: 'hats'}, {name: 'fancy treats'} , {name: 'collars'}, {name: 'leashes'}, {name: 'other'}])
+Category.create([{name: 'Bandanas'}, {name: 'Outerwear'}, {name: 'Bows & Clips'}, {name: 'Hoodies'}, {name: 'Costumes'}, {name: 'Sweaters'}, {name: 'Eyewear'}, {name: 'Hats'}, {name: 'Fancy treats'}, {name: 'Collars & Leashes'}, {name: 'Other Items'}])
