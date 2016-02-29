@@ -13,7 +13,7 @@
 
 <p>
   <strong>Current price:</strong>
-  <%= @product.current_price %>
+  <%= number_to_currency @product.current_price %>
 </p>
 
 <p>
@@ -28,16 +28,17 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @product.category.try(:name) %>
+  <%= @product.category.name.titleize %>
 </p>
 
 <p>
-  <strong>Brand:</strong>
+    <strong>Brand:</strong>
   <%= @product.brand.try(:name) %>
 </p>
 
-
-<%= image_tag @product.avatar.url(:medium) %>
+<p>
+  <%= image_tag @product.avatar.url(:medium) %>
+</p>
 
 <br>
 

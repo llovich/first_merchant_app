@@ -13,7 +13,7 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
+        <td><%= category.name.titleize %></td>
         <td><%= link_to fa_icon('eye', text: "view"), admin_category_path(category) %></td>
         <td><%= link_to  fa_icon('pencil', text: "edit"), edit_admin_category_path(category) %></td>
         <td><%= link_to fa_icon('trash', text: "delete"), admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>

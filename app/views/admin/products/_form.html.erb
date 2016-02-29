@@ -10,9 +10,14 @@
     <%= f.input :current_price %>
     <%= f.input :quantity %>
     <%= f.input :description %>
-    <%= f.association :category %>
+    <%= f.association :category, collection: Category.order(:name) %>
     <%= f.association :brand %>
-    <%= f.input :avatar, as: :file %>
+    <%= f.input :avatar, as: :file, label: "Upload a New Product Image" %>
+    <% if @product.avatar.exists? %>
+      <%= label_tag "Current Image" %>
+      <p><%= image_tag @product.avatar.url(:thumb) %></p>
+      <br>
+    <% end %>
   </div>
 
   <div class="form-actions">
