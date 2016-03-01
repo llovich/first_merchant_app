@@ -1,4 +1,9 @@
 <h1>Pampered Pups Boutique</h1>
+<% if params[:category_id] %>
+<h3>All <%= @category.name.titleize %></h3>
+<% else %>
+<h3>All Products</h3>
+<% end %>
 <p>Intro text here.</p>
 
 <div class="row">
