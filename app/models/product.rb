@@ -22,13 +22,14 @@ has_attached_file :avatar,
 validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 private
-
+# TODO: make sure thie error appears/this works
   def ensure_not_referenced_by_any_line_items
     if line_items.empty?
       return true
     else
       errors.add(:base, "Cannot delete because line items are present")
       return false
+    end
   end
 
 end
