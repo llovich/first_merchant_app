@@ -43,6 +43,8 @@ gem 'faker'
 gem 'populator'
 gem "paperclip", "~> 4.3"
 gem 'devise'
+# Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

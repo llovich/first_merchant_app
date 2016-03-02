@@ -1,27 +1,4 @@
-<!-- Search form -->
-<span class="pull-right">
-  <%= form_tag(shop_path, method: :get, role: "search", class: "form-inline") do %>
-    <div class="form-group">
-      <%# TODO: hide the search label %>
-      <%# label_tag :search, class: "sr-only" %>
-      <%= text_field_tag(:search, nil, placeholder: "Search products", class: "form-control input-sm") %>
-    </div>
-    <%= submit_tag("Search", class: "btn btn-default btn-sm") %>
-  <% end %>
-</span>
-
-
-<h1>Pampered Pups Boutique</h1>
-<% if params[:category_id] %>
-<h3>All <%= @category.name.titleize %></h3>
-<% else %>
-<h3>All Products</h3>
-<% end %>
-<p>Welcome to Pampered Pups Boutique!</p>
-
-<div class="row">
-<% @products.each do |product| %>
-  <div class="col-sm-4">
+<div class="col-sm-4">
     <div class="panel panel-warning">
       <div class="panel-body">
         <%= image_tag product.avatar.url(:medium), class:"img-responsive img-rounded" %>
@@ -57,7 +34,4 @@
       </div>
     </div>
   </div>
-</div>
-<% end %>
-
 </div>

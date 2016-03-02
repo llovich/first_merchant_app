@@ -1,0 +1,44 @@
+<!-- closes container div in application.html-->
+</div>
+
+<div class="jumbotron">
+  <div  class="container">
+    <h1 class="display-3">Welcome to Pampered Pups Boutique</h1>
+    <br>
+    <h3>March Madness Sale!</h3>
+    <p class="lead">This month, we are offering a 50% discount on all winter clothing.<br>So, get your little doggy a cute coat, sweater, and/or hoodie.</p>
+    <!--
+    <hr class="m-y-2">
+    <p></p>
+    <br>
+    -->
+    <p class="lead">
+      <%= link_to "visit the shop", shop_path, class:"btn btn-warning btn-lg" %>
+    </p>
+  </div>
+</div> <!-- ends jumbotron -->
+
+
+<div class="container">
+<div class="row">
+<h1>Featured Products</h1>
+<% @products3.each do |product| %>
+  <div class="col-sm-4">
+    <div class="panel panel-warning">
+      <div class="panel-body">
+        <%= image_tag product.avatar.url(:medium), class:"img-responsive img-rounded " %>
+        <span class="pull-right">
+          <h5><%= number_to_currency product.current_price %></h5>
+        </span>
+        <h5><%= product.name %></h5>
+        <span class="pull-right">
+        <%= link_to "visit the shop", shop_path, class:"btn btn-warning btn-xs" %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+</div>
+<!-- to reopen container div in application.html-->
+<div>
