@@ -4,4 +4,9 @@ class LineItem < ActiveRecord::Base
 
   #TODO: before save, reduce product quantity field in product
   #TODO: before delete/destroy, add back to the product inventory quantity field
+
+  def total
+    price * quantity
+
+  end
 end

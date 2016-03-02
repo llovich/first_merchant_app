@@ -10,8 +10,11 @@ namespace :admin do
   resources :categories
 end
 
+resources :line_items, only: [:create]
   #changed resources to singular resource so that the :id param in url is not in the url (for security)
-  resource :cart, only:[:edit, :update, :destroy]
+
+resource :cart, only:[:edit, :update, :destroy]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
