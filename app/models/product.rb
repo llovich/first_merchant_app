@@ -6,7 +6,6 @@ class Product < ActiveRecord::Base
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_items
 
-
 #by using brand and category instead of brand_id, category_id, we are making sure that there is a brand. category object present
  validates_presence_of :name, :current_price, :quantity, :description, :brand, :category
 
@@ -20,6 +19,7 @@ has_attached_file :avatar,
     styles: { large: "500x500#", medium: "300x300#", thumb: "100x100#" },
     default_url: ":style_missing.jpg"
 validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
 
 private
 # TODO: make sure thie error appears/this works

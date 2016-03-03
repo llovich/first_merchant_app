@@ -21,6 +21,7 @@ class StorefrontController < ApplicationController
   def home
      @products = Product.all
      @products3 = @products.sample(3)
+
   end
 
 end

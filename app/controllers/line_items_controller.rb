@@ -6,6 +6,7 @@ class LineItemsController < ApplicationController
   before_action :set_cart
 
   def create
+    @skip_footer = true
     product = Product.find(params[:product_id])
     @line_item = @cart.line_items.build(product: product, price: product.current_price)
 
@@ -17,4 +18,16 @@ class LineItemsController < ApplicationController
       redirects_to :back
     end
   end
+
+
+  def destroy
+    @skip_footer = true
+    @line_item = Line_Item.find(params[:id])
+    @line_item.destroy
+    respond_to do |format|
+      format.html { redirect_to cart_url, notice: 'Item was successfully deleted.' }
+      format.json { head :no_content }
+    end
+  end
+
 end
