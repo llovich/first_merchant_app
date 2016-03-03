@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/shop' => 'storefront#index'
   get '/about' => 'storefront#about'
+  get '/home' => 'storefront#home'
 
   devise_for :users
 namespace :admin do
@@ -9,13 +10,20 @@ namespace :admin do
   resources :categories
 end
 
+resources :orders, only: [:new, :create, :show]
+
+#added destroy to be able to delete line item
+resources :line_items, only: [:create, :destroy]
+
+#changed resources to singular resource so that the :id param in url is not in the url (for security)
+resource :cart, only:[:edit, :update, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'storefront#index'
+  root 'storefront#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

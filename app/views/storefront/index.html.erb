@@ -17,12 +17,11 @@
 <% else %>
 <h3>All Products</h3>
 <% end %>
-<p>Intro text here.</p>
 
 <div class="row">
 <% @products.each do |product| %>
   <div class="col-sm-4">
-    <div class="panel panel-default">
+    <div class="panel panel-warning">
       <div class="panel-body">
         <%= image_tag product.avatar.url(:medium), class:"img-responsive img-rounded" %>
         <span class="pull-right">
@@ -31,9 +30,10 @@
         <h5><%= product.name %></h5>
         <span class="pull-right">
         <% #TODO: update w link when we have cart module %>
-          <button class="btn btn-warning btn-xs">add to cart</button>
+        <%= button_to "add to cart", line_items_path(product_id: product.id), class:"btn btn-warning btn-xs" %>
+
         </span>
-        <a href="#" data-toggle="modal" data-target="#product_<%= product.id %>"><small>quick info</small> </a>
+        <a href="#" data-toggle="modal" data-target="#product_<%= product.id %>"><small>read more info</small> </a>
       </div>
     </div>
 </div>
@@ -46,14 +46,13 @@
         <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
       </div>
       <div class="modal-body">
-        <div> <%= image_tag product.avatar.url(:large), class:"img-responsive img-rounded" %>
+        <div style="text-align:center;"> <%= image_tag product.avatar.url(:large), class:"img-responsive img-rounded center-block" %>
         </div>
-        <div> <%= product.description %></div>
-        <div><%=  number_to_currency product.current_price  %></div>
+        <div> <br><%= product.description %></div>
+        <div><strong><%=  number_to_currency product.current_price  %></strong></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">add to cart</button>
+         <%= button_to "add to cart", line_items_path(product_id: product.id), class:"btn btn-warning" %>
       </div>
     </div>
   </div>
@@ -61,3 +60,4 @@
 <% end %>
 
 </div>
+

@@ -5,26 +5,31 @@ class Admin::BrandsController < AdminController
   # GET /brands.json
   def index
     @brands = Brand.all
+     @skip_footer = true
   end
 
   # GET /brands/1
   # GET /brands/1.json
   def show
+     @skip_footer = true
   end
 
   # GET /brands/new
   def new
     @brand = Brand.new
+     @skip_footer = true
   end
 
   # GET /brands/1/edit
   def edit
+     @skip_footer = true
   end
 
   # POST /brands
   # POST /brands.json
   def create
     @brand = Brand.new(brand_params)
+    @skip_footer = true
 
     respond_to do |format|
       if @brand.save
@@ -40,6 +45,7 @@ class Admin::BrandsController < AdminController
   # PATCH/PUT /brands/1
   # PATCH/PUT /brands/1.json
   def update
+    @skip_footer = true
     respond_to do |format|
       if @brand.update(brand_params)
         format.html { redirect_to admin_brand_url(@brand), notice: 'Brand was successfully updated.' }

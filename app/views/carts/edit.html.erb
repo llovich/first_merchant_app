@@ -1,0 +1,12 @@
+<h1>Your Shopping Cart</h1>
+
+<%= render @cart %>
+
+
+<div class="pull-right">
+<%= link_to "continue shopping", shop_path, class:"btn btn-warning" %>
+<%= link_to "empty cart", @cart, method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger" %>
+<%= link_to fa_icon("money", text:"checkout"), new_order_path, class:"btn btn-success" %>
+</div>
+
+

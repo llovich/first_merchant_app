@@ -1,0 +1,37 @@
+<div class="col-sm-4">
+    <div class="panel panel-warning">
+      <div class="panel-body">
+        <%= image_tag product.avatar.url(:medium), class:"img-responsive img-rounded" %>
+        <span class="pull-right">
+          <h5><%= number_to_currency product.current_price %></h5>
+        </span>
+        <h5><%= product.name %></h5>
+        <span class="pull-right">
+        <% #TODO: update w link when we have cart module %>
+          <button class="btn btn-warning btn-xs">add to cart</button>
+        </span>
+        <a href="#" data-toggle="modal" data-target="#product_<%= product.id %>"><small>read more info</small> </a>
+      </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="product_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
+      </div>
+      <div class="modal-body">
+        <div style="text-align:center;"> <%= image_tag product.avatar.url(:large), class:"img-responsive img-rounded center-block" %>
+        </div>
+        <div> <br><%= product.description %></div>
+        <div><strong><%=  number_to_currency product.current_price  %></strong></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-warning">add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>

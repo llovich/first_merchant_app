@@ -2,11 +2,30 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+
 body {
   margin-top:60px;
   padding-top:20px;
   font-family: 'Lato', sans-serif;
 }
+
+.highlight_color{
+  color: #C6E5D9;
+}
+
+.btn-orange {
+  background-color:#FFF47F;
+  color: #666666;
+  border-color:#F9ED70;
+}
+
+.jumbotron {
+  margin-top: -30px;
+  background-color: #C6E5D9;
+  text-align: center;
+}
+
 
 h1 {
     font-family: 'Sue Ellen Francisco', cursive;
@@ -34,4 +53,13 @@ p {
 
 .form-inputs {
     font-family: 'Lato', sans-serif;
+}
+
+
+footer {
+    background-color: #000000;
+    min-height: 60px;
+    margin-top:20px;
+    color:#777777;
+
 }
