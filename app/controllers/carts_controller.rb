@@ -10,7 +10,6 @@ class CartsController < ApplicationController
   end
 
   def update
-    @skip_footer = true
   end
 
   def destroy

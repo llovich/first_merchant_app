@@ -19,7 +19,8 @@
       <td><%= item.quantity %></td>
       <td><%= number_to_currency item.price %></td>
       <td><%= number_to_currency item.total %></td>
-      <td><%= link_to fa_icon('trash', text: "delete"), cart_path(item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <td><%= link_to fa_icon('trash', text: "delete"), line_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
 
     <% end %>

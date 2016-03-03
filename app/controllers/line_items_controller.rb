@@ -6,7 +6,6 @@ class LineItemsController < ApplicationController
   before_action :set_cart
 
   def create
-    @skip_footer = true
     product = Product.find(params[:product_id])
     @line_item = @cart.line_items.build(product: product, price: product.current_price)
 
@@ -19,15 +18,14 @@ class LineItemsController < ApplicationController
     end
   end
 
-
   def destroy
-    @skip_footer = true
-    @line_item = Line_Item.find(params[:id])
-    @line_item.destroy
-    respond_to do |format|
-      format.html { redirect_to cart_url, notice: 'Item was successfully deleted.' }
-      format.json { head :no_content }
-    end
+      item = @cart.line_items.find(params[:id])
+      item.destroy
+      #DO I NEED THIS SESSION STUFF?
+      #session[:product_id] = nil
+      #session[:quantity] = nil
+      flash[:notice] = "Item was successfully deleted"
+      redirect_to shop_url
   end
 
 end

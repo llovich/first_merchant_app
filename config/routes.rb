@@ -10,7 +10,8 @@ namespace :admin do
   resources :categories
 end
 
-resources :line_items, only: [:create]
+#added destroy to be able to delete line item
+resources :line_items, only: [:create, :destroy]
   #changed resources to singular resource so that the :id param in url is not in the url (for security)
 
 resource :cart, only:[:edit, :update, :destroy]

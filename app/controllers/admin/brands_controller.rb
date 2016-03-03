@@ -60,7 +60,6 @@ class Admin::BrandsController < AdminController
   # DELETE /brands/1
   # DELETE /brands/1.json
   def destroy
-    @skip_footer = true
     @brand.destroy
     respond_to do |format|
       format.html { redirect_to admin_brands_url, notice: 'Brand was successfully destroyed.' }
