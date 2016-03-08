@@ -13,7 +13,12 @@
     <tr>
       <td><%= image_tag item.product.avatar.url(:thumb), class:"img-responsive img-thumbnail" %></td>
       <td><%= item.product.name %></td>
-      <td><%= item.quantity %></td>
+      <td>
+          <%= simple_form_for(item, html: {class: 'form-inline'}) do |item_fields| %>
+            <%= item_fields.input :quantity, label: false %>
+            <%= item_fields.button :submit, "Save" %>
+          <% end %>
+      </td>
       <td><%= number_to_currency item.price %></td>
       <td><%= number_to_currency item.total %></td>
 

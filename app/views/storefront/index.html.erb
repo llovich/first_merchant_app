@@ -21,7 +21,7 @@
 <div class="row">
 <% @products.each do |product| %>
   <div class="col-sm-4">
-    <div class="panel panel-warning">
+    <div class="panel panel-default">
       <div class="panel-body">
         <%= image_tag product.avatar.url(:medium), class:"img-responsive img-rounded" %>
         <span class="pull-right">
@@ -30,7 +30,7 @@
         <h5><%= product.name %></h5>
         <span class="pull-right">
         <% #TODO: update w link when we have cart module %>
-        <%= button_to "add to cart", line_items_path(product_id: product.id), class:"btn btn-warning btn-xs" %>
+        <%= button_to "add to cart", line_items_path(product_id: product.id), class:"btn btn-danger btn-xs" %>
 
         </span>
         <a href="#" data-toggle="modal" data-target="#product_<%= product.id %>"><small>read more info</small> </a>
@@ -52,7 +52,7 @@
         <div><strong><%=  number_to_currency product.current_price  %></strong></div>
       </div>
       <div class="modal-footer">
-         <%= button_to "add to cart", line_items_path(product_id: product.id), class:"btn btn-warning" %>
+         <%= button_to "add to cart", line_items_path(product_id: product.id), class:"btn btn-danger" %>
       </div>
     </div>
   </div>

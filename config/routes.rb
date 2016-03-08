@@ -13,7 +13,7 @@ end
 resources :orders, only: [:new, :create, :show]
 
 #added destroy to be able to delete line item
-resources :line_items, only: [:create, :destroy]
+resources :line_items, only: [:create, :destroy, :update]
 
 #changed resources to singular resource so that the :id param in url is not in the url (for security)
 resource :cart, only:[:edit, :update, :destroy]

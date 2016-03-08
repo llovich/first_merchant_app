@@ -1,5 +1,6 @@
 class StorefrontController < ApplicationController
   def index
+    @skip_footer = true
     if params[:search]
       @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
       if @products.empty?
