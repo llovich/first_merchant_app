@@ -1,14 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.paperclip.defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['pampered-pup-boutique-tts'],
-      :access_key_id => ENV['AKIAJRCJVGJTVBZ6NFEA'],
-      :secret_access_key => ENV['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']
-    }
-  }
+  config.paperclip_defaults = {
+   :storage => :s3,
+   :s3_credentials => {
+     :bucket => ENV['S3_BUCKET_NAME'],
+     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+   }
+ }
   #TODO: set up action mailer domain once we know domain
   #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
