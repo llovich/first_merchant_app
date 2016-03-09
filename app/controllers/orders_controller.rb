@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
   before_action :set_cart, only: [:new, :create]
 
   def new
-     @skip_footer = true
      #redirects user from order if the cart is empty
      if @cart.line_items.empty?
         redirect_to shop_url, notice: "Your cart is empty."
@@ -34,7 +33,6 @@ class OrdersController < ApplicationController
   end
 
   def show
-     @skip_footer = true
     # TODO: deny access to orders to other users
     @order = Order.find(params[:id])
   end

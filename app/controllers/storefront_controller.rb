@@ -1,6 +1,5 @@
 class StorefrontController < ApplicationController
   def index
-    @skip_footer = true
     if params[:search]
       @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
       if @products.empty?
@@ -17,12 +16,13 @@ class StorefrontController < ApplicationController
   end
 
   def about
+    @include_footer = true
   end
 
   def home
+     @include_footer = true
      @products = Product.all
      @products3 = @products.sample(3)
-
   end
 
 end

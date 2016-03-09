@@ -16,8 +16,7 @@
   <%= yield %>
 </div>
 
-<%= render 'layouts/footer' unless @skip_footer %>
+<%= render 'layouts/footer' if @include_footer %>
 
-</footer>
 </body>
 </html>

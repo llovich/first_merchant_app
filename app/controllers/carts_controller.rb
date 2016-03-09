@@ -6,7 +6,6 @@ class CartsController < ApplicationController
 
   before_action :set_cart
   def edit
-     @skip_footer = true
   end
 
   def update
