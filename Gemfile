@@ -44,6 +44,7 @@ gem "paperclip", "~> 4.3"
 gem 'devise'
 # Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.0.6'
+gem 'figaro'
 
 #added new group for production and added 2 gems
 group :production do
