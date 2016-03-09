@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def require_admin_user
     unless user_signed_in? && current_user.admin
-      redirect_to root_url, alert: "You shall not pass. If you are an admin, sign in for access."
+      redirect_to root_url, alert: "Oops...that section is only for Admins."
     end
   end
 
