@@ -21,6 +21,8 @@
         <% if session[:cart_id] %>
           <li><%= link_to fa_icon("shopping-cart", text: "Cart"), edit_cart_path %></li>
         <% end %>
+
+        <% if user_signed_in? && current_user.admin %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -31,6 +33,7 @@
             <li><%= link_to "Categories", admin_categories_path %></li>
           </ul>
         </li>
+        <% end %>
 
         <!-- auth menu links - use helper functions in devise -->
         <% if user_signed_in? %>
