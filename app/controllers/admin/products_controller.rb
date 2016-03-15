@@ -17,7 +17,7 @@ class Admin::ProductsController < AdminController
   # GET /products/new
   def new
     @product = Product.new
-     @skip_footer = true
+    @skip_footer = true
   end
 
   # GET /products/1/edit
