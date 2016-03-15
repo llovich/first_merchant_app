@@ -76,5 +76,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate', '~> 2.6.6'
+  gem "letter_opener"
 end
 
