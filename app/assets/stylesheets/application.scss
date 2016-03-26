@@ -1,13 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
+@import url(https://fonts.googleapis.com/css?family=Montez|Maven+Pro);
 
 
 body {
   margin-top:60px;
   padding-top:20px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 .highlight_color{
@@ -31,33 +31,37 @@ body {
   text-align: center;
 }
 
+h1, h2, h3, h4, h5 {
+    // font-family: 'Sue Ellen Francisco', cursive;
+    font-family: 'Montez', cursive;
+  }
 
 h1 {
-    font-family: 'Sue Ellen Francisco', cursive;
+    font-size:4.0em;
+  }
+
+.jumbotron h1 {
+  font-size:5.5em;
+}
+
+h2 {
     font-size:3.5em;
   }
 
-h2 {
-    font-family: 'Sue Ellen Francisco', cursive;
-    font-size:3em;
-  }
-
 h3 {
-    font-family: 'Sue Ellen Francisco', cursive;
-    font-size:2.5em;
+    font-size:3.0em;
   }
 
 h4, h5 {
-    font-family: 'Sue Ellen Francisco', cursive;
     font-size:2em;
   }
 
 p {
-    font-family: 'Lato', sans-serif;
-  }
+  font-family: 'Maven Pro', sans-serif;
+}
 
 .form-inputs {
-    font-family: 'Lato', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 
